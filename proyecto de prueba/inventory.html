@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario - CoolCenter</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js" defer></script>
+
+</head>
+<body>
+  
+<header>
+  <nav>
+    <div class="brand">Cool<span>Center</span></div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a href="index.html">Inicio</a>
+      <a href="inventory.html">Ver inventario</a>
+      <a href="contact.html">Contacto</a>
+      <a href="cart.html" class="primary">Carrito</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Registro</a>
+    </div>
+  </nav>
+</header>
+
+  <main class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">
+      <h1>Inventario <span class="badge"><span id="count">0</span> items</span></h1>
+      <input id="search" class="input" placeholder="Buscar por nombre, marca o categoría...">
+    </div>
+    <div id="product-list" class="grid"></div>
+  </main>
+  <footer>© 2025 CoolCenter</footer>
+  <script type="module" src="js/inventory.js"></script>
+</body>
+</html>

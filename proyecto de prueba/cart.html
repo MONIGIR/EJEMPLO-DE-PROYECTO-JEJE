@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito - CoolCenter</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js" defer></script>
+
+</head>
+<body>
+  
+<header>
+  <nav>
+    <div class="brand">Cool<span>Center</span></div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a href="index.html">Inicio</a>
+      <a href="inventory.html">Ver inventario</a>
+      <a href="contact.html">Contacto</a>
+      <a href="cart.html" class="primary">Carrito</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Registro</a>
+    </div>
+  </nav>
+</header>
+
+  <main class="container">
+    <h1>Carrito</h1>
+    <table>
+      <thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Subtotal</th><th></th></tr></thead>
+      <tbody id="cart-body"></tbody>
+      <tfoot><tr><td colspan="3" style="text-align:right">Total</td><td id="total">$0.00</td><td></td></tr></tfoot>
+    </table>
+    <p class="badge">Página de pagos opcional (no incluida).</p>
+  </main>
+  <footer>© 2025 CoolCenter</footer>
+  <script type="module" src="js/cart.js"></script>
+</body>
+</html>
