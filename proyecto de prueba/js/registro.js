@@ -1,47 +1,83 @@
+// ...existing code...
 document.addEventListener('DOMContentLoaded', () => {
-    const signUp = document.getElementById('signUp')
-        || document.querySelector('.sign-up')
-        || document.querySelector('[data-action="sign-up"]');
+  const titulo = document.querySelector('.form-container h1');
 
-    const signIn = document.getElementById('signIn')
-        || document.querySelector('.sign-in')
-        || document.querySelector('[data-action="sign-in"]');
+  const Username = document.querySelector("#Nombre");
+  const email = document.querySelector("#correo");
+  const password = document.querySelector("#contrasena"); // coincide con el id cambiado en HTML
 
-    const nameField = document.getElementById('nameInput')
-        || document.querySelector('.name-input')
-        || document.querySelector('#name')
-        || document.querySelector('input[name="name"]');
+  const btnRegistrar = document.getElementById('registrarse');
+  const btnIniciar = document.getElementById('iniciar-sesion');
 
-    const titleEl = document.getElementById('title')
-        || document.querySelector('.title')
-        || document.querySelector('.form-title')
-        || document.querySelector('h2');
+  // Cambiar H1 al hacer click en los botones
+  btnRegistrar?.addEventListener('click', () => {
+    if (titulo) titulo.textContent = 'Registro completado';
+  });
 
-    function toSignIn() {
-        if (nameField) {
-            nameField.style.maxHeight = '0';
-            nameField.setAttribute('aria-hidden', 'true');
-        }
-        if (titleEl) titleEl.textContent = 'Iniciar Sesión';
-        if (signUp) signUp.classList.add('disabled');
-        if (signIn) signIn.classList.remove('disabled');
-    }
+  btnIniciar?.addEventListener('click', () => {
+    if (titulo) titulo.textContent = 'Pantalla de inicio de sesión';
+  });
 
-    function toSignUp() {
-        if (nameField) {
-            nameField.style.maxHeight = '500px';
-            nameField.setAttribute('aria-hidden', 'false');
-        }
-        if (titleEl) titleEl.textContent = 'Registrarse';
-        if (signUp) signUp.classList.remove('disabled');
-        if (signIn) signIn.classList.add('disabled');
-    }
+  // Validaciones en blur (manteniendo la lógica corregida)
+  if (Username) {
+    Username.addEventListener("blur", function(e) {
+      const input = e.target;
+      const value = input.value.trim();
+      const inputField = input.parentElement;
+      const errorSpan = inputField.nextElementSibling;
 
-    // Inicializa según clase active (opcional) o fija a registro/login por defecto
-    if (signUp && signUp.classList.contains('active')) toSignUp();
-    else if (signIn && signIn.classList.contains('active')) toSignIn();
-    else toSignIn(); // cambia si quieres iniciar en "Registrarse"
+      if (value.length === 0) {
+        inputField.classList.add("invalido");
+        errorSpan.classList.add("error");
+        errorSpan.innerText = "Necesita un nombre de usuario";
+      } else {
+        inputField.classList.remove("invalido");
+        errorSpan.classList.remove("error");
+        errorSpan.innerText = "";
+      }
+    });
+  }
 
-    if (signIn) signIn.addEventListener('click', toSignIn);
-    if (signUp) signUp.addEventListener('click', toSignUp);
+  if (email) {
+    email.addEventListener("blur", function(e) {
+      const input = e.target;
+      const value = input.value.trim();
+      const inputField = input.parentElement;
+      const errorSpan = inputField.nextElementSibling;
+      const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if (value.length === 0) {
+        inputField.classList.add("invalido");
+        errorSpan.classList.add("error");
+        errorSpan.innerText = "Necesita un Email";
+      } else if (!emailRegex.test(value)) {
+        inputField.classList.add("invalido");
+        errorSpan.classList.add("error");
+        errorSpan.innerText = "Introduzca un email valido";
+      } else {
+        inputField.classList.remove("invalido");
+        errorSpan.classList.remove("error");
+        errorSpan.innerText = "";
+      }
+    });
+  }
+
+  if (password) {
+    password.addEventListener("blur", function(e) {
+      const input = e.target;
+      const value = input.value.trim();
+      const inputField = input.parentElement;
+      const errorSpan = inputField.nextElementSibling;
+
+      if (value.length === 0) {
+        inputField.classList.add("invalido");
+        errorSpan.classList.add("error");
+        errorSpan.innerText = "Necesita una contraseña";
+      } else {
+        inputField.classList.remove("invalido");
+        errorSpan.classList.remove("error");
+        errorSpan.innerText = "";
+      }
+    });
+  }
 });
