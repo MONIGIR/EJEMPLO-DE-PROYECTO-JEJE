@@ -1,4 +1,4 @@
-// ...existing code...
+
 document.addEventListener('DOMContentLoaded', () => {
   const titulo = document.querySelector('.form-container h1');
 
