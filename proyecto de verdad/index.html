@@ -11,12 +11,14 @@
 </head>
 
 <body>
+    <audio id="bg-music" src="" hidden></audio>
+    <!--prueba musica, se relaciona con el js de musica jeje, ya de ahi en fuera no tiene nada que ver con el codigo normal-->
     <header class="header">
 
         <div class="menu container"> <!--DIV PARA LA NAV-->
             <a href="#" class="logo">Cool Center</a>
             <input type="checkbox" id="menu">
-            <label for="menu"><img src="images/menu.png" class="menu-icono" alt="logo"></label>
+            <label for="menu"><img src="images/logo.jpg" class="menu-icono" alt="logo"></label>
             <nav class="navbar">
                 <ul>
                     <li><a href="#">Inicio</a></li><!--aqui va a ir para redirigir al html del inicio (index)-->
@@ -24,7 +26,7 @@
                     <li><a href="#">Productos</a></li><!--aqui va a ir para redirigir al html de los productos-->
                     <li><a href="#">Contacto</a></li><!--aqui va a ir para redirigir al html del contacto-->
                     <li><a href="#">Carrito</a></li> <!--aqui va a ir para redirigir al html del carrito-->
-                     <li><a href="registro.html">Registro</a></li>
+                    <li><a href="registro.html">Registro</a></li>
                 </ul>
             </nav>
 
@@ -60,7 +62,7 @@
                 soluta eveniet!
             </p>
             <div class="botons">
-                <a href="#" class="btn-1">Más Información</a>
+                <li><a href="informacion.html" class="btn-1">Sobre nosotros</a></li>
                 <a href="#" class="btn-1">Menu</a>
             </div>
             <div class="socials-1">
@@ -89,25 +91,19 @@
 
     </section>
 
-    <section class="platillos container" id="lista">
+    <section class="platillos container" id="lista"> <!--cpus-->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
                     <div class="platillo">
-                        <h3>Gigabyte H610 Intel LGA 1700 MINI-TX</h3>
+                        <h3>Intel i9 14000k</h3>
                         <p class="precio">$3,500</p>
-                        <img src="images/gigabyte h610 intel lga 1700 mini tx.jpg" alt="">
-                        <p>Supports Intel® Core™ 14th/ 13th /12th processors <br>
-                            Dual Channel Non-ECC Unbuffered DDR4, 2 DIMMs <br>
-                            4+1+1 Hybrid Digital VRM Design <br>
-                            Intel® GbE LAN with cFosSpeed Internet Accelerator Software <br>
-                            NVMe PCIe 3.0 x4 M.2 <br>
-                            High Quality Audio Capacitors and Audio Noise Guard <br>
-                            Smart Fan 6 Features Multiple Temperature Sensors , Hybrid Fan Headers with FAN STOP <br>
-                            GIGABYTE APP Center, Simple and Easy Use <br>
-                            Anti-Sulfur Resistors Design <br>
-                            Tambien he de decir que esta bien cabrona eh <br></p>
+                        <img src="images/intel i9 14th.jpg" alt="">
+                        <p>The Intel i9 14th generation processors, codenamed "Raptor Lake," feature a performance
+                            hybrid architecture with up to 24 cores (8 Performance-cores and 16 Efficient-cores) and up
+                            to 32 threads. The highest-end model, the i9-14900KS, can reach a maximum turbo frequency of
+                            6.2 GHz, while the i9-14900K has a 6.0 GHz maximum turbo frequency.</p>
                         <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
                     </div>
                 </div>
@@ -139,18 +135,29 @@
 
                 <div class="swiper-slide">
                     <div class="platillo">
-                        <h3>Memoria Kingston FURY Beast DDR4 RGB
-
-                        </h3>
+                        <h3>Ryzen 7 5700x</h3>
                         <p class="precio">$2,500</p>
-                        <img src="images/ram fury 32gb ddr4 3000mhz.png" alt="">
-                        <p>La memoria Kingston FURY™ Beast DDR4 RGB mejora el estilo y el rendimiento de cualquier
-                            sistema. Con una impresionante iluminación RGB1 que complementa el elegante difusor de calor
-                            negro y velocidades impresionantes de hasta 3733MT/seg*. Elije entre los perfiles Intel® XMP
-                            Certified y XMP-Ready, Ready para AMD Ryzen™, u Overclocking automático Plug N Play2 a
-                            2666MT/seg para obtener el impulso que necesitas para trabajar y jugar.
-                            ></p>
+                        <img src="images/ryzen 7 5700x.jpg" alt="">
+                        <p>El Ryzen 7 5700X es un procesador de 8 núcleos y 16 hilos para PC de escritorio, lanzado en
+                            2022, con una frecuencia base de \(3.4\) GHz que puede alcanzar hasta \(4.6\) GHz en modo
+                            turbo. Se destaca por su eficiencia energética (TDP de \(65\)W) y su compatibilidad con el
+                            socket AM4, ideal para actualizaciones. No tiene gráficos integrados, por lo que requiere
+                            una tarjeta gráfica dedicada.</p>
                         <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="platillo">
+                        <h3>Ryzen 7 5700x3d</h3>
+                        <p class="precio">$2,500</p>
+                        <img src="images/ryzen 7 5700x3d.jpeg" alt="">
+                        <p>El Ryzen 7 5700X3D es un procesador de 8 núcleos y 16 hilos con 96 MB de caché L3 gracias a
+                            la tecnología 3D V-Cache, lo que lo hace ideal para juegos y tareas de alta exigencia.
+                            Utiliza el socket AM4, es compatible con memoria RAM DDR4, y aunque sus frecuencias son un
+                            poco más bajas que el 5800X3D, ofrece un rendimiento en juegos muy competitivo a un precio
+                            más bajo. </p>
+                        <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
                     </div>
                 </div>
 
@@ -160,33 +167,137 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-pagination"></div>
 
-            </div>
+        </div>
         </div>
 
     </section>
 
 
-      <section class="recetas container">
+    <section class="recetas container">
+        <div class="recetas-2">
+            <h2>20 <br> Componentes <br> High-end </h2>
 
+        </div>
         <div class="recetas-1">
             <h3>más de 10 componentes</h3>
             <hr>
             <p>Componentes</p>
 
         </div>
-        <div class="recetas-2">
-            <h2>20 <br> Componentes <br> High-end </h2>
 
+
+    </section>
+
+    <section class="platillos container" id="lista-2"> <!--gpus-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="platillo">
+                        <h3>Gigabyte H610 Intel LGA 1700 MINI-TX</h3>
+                        <p class="precio">$3,500</p>
+                        <img src="images/5070 ti 16 gb.jpg" alt="">
+                        <p>Supports Intel® Core™ 14th/ 13th /12th processors <br>
+                            Dual Channel Non-ECC Unbuffered DDR4, 2 DIMMs <br>
+                            4+1+1 Hybrid Digital VRM Design <br>
+                            Intel® GbE LAN with cFosSpeed Internet Accelerator Software <br>
+                            NVMe PCIe 3.0 x4 M.2 <br>
+                            High Quality Audio Capacitors and Audio Noise Guard <br>
+                            Smart Fan 6 Features Multiple Temperature Sensors , Hybrid Fan Headers with FAN STOP <br>
+                            GIGABYTE APP Center, Simple and Easy Use <br>
+                            Anti-Sulfur Resistors Design <br>
+                            Tambien he de decir que esta bien cabrona eh <br></p>
+                        <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="platillo">
+                        <h3>Procesador para gaming AMD Ryzen™ 7 7800X3D</h3>
+                        <p class="precio">$8,500</p>
+                        <img src="images/4060 8g.jpg" alt="">
+                        <p>Junto con la tecnología AMD 3D V-Cache™, el excelente procesador para la experiencia de juego
+                            te permite disfrutar de un mejor rendimiento en cada título que juegues1
+                        </p>
+                        <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="platillo">
+                        <h3>Procesador Intel® Core™ i7 14700K.</h3>
+                        <p class="precio">$7,200</p>
+                        <img src="images/5090 32 g.png" alt="">
+                        <p>Delivering robust, real-world performance, Intel® Core™ processors give laptop users the
+                            power they can rely on for casual gaming, multitasking, and reliable connectivity.
+
+                        </p>
+                        <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="platillo">
+                        <h3>Memoria Kingston FURY Beast DDR4 RGB
+
+                        </h3>
+                        <p class="precio">$2,500</p>
+                        <img src="images/3060 12 gb.jpg" alt="">
+                        <p>La memoria Kingston FURY™ Beast DDR4 RGB mejora el estilo y el rendimiento de cualquier
+                            sistema. Con una impresionante iluminación RGB1 que complementa el elegante difusor de calor
+                            negro y velocidades impresionantes de hasta 3733MT/seg*. Elije entre los perfiles Intel® XMP
+                            Certified y XMP-Ready, Ready para AMD Ryzen™, u Overclocking automático Plug N Play2 a
+                            2666MT/seg para obtener el impulso que necesitas para trabajar y jugar.
+                            ></p>
+                        <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="platillo">
+                        <h3>Memoria Kingston FURY Beast DDR4 RGB
+
+                        </h3>
+                        <p class="precio">$2,500</p>
+                        <img src="images/3080 12 g.jpg" alt="">
+                        <p>La memoria Kingston FURY™ Beast DDR4 RGB mejora el estilo y el rendimiento de cualquier
+                            sistema. Con una impresionante iluminación RGB1 que complementa el elegante difusor de calor
+                            negro y velocidades impresionantes de hasta 3733MT/seg*. Elije entre los perfiles Intel® XMP
+                            Certified y XMP-Ready, Ready para AMD Ryzen™, u Overclocking automático Plug N Play2 a
+                            2666MT/seg para obtener el impulso que necesitas para trabajar y jugar.
+                            ></p>
+                        <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-pagination"></div>
+
+        </div>
         </div>
 
     </section>
 
+    <section class="recetas container"> <!--contacto-->
+
+        <div class="recetas-1">
+            <hr>
+            <li><a href="contacto.html">Contacto</a></li>
+            <!--aqui va a ir para redirigir al html donde puedes dar tus contacto(hazlo tu adrian me da hueva hacerlo a mi jeje)-->
+        </div>
 
 
-
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="JS/musica.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/index.js"></script>
+
 </body>
 
 </html>
