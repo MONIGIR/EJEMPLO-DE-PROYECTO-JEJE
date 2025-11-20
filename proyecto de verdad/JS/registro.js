@@ -1,23 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
   const titulo = document.querySelector('.form-container h1');
-
   const Username = document.querySelector("#Nombre");
   const email = document.querySelector("#correo");
-  const password = document.querySelector("#contrasena"); // coincide con el id cambiado en HTML
-
+  const password = document.querySelector("#contrasena"); 
   const btnRegistrar = document.getElementById('registrarse');
   const btnIniciar = document.getElementById('iniciar-sesion');
 
-  // Cambiar H1 al hacer click en los botones
-  btnRegistrar?.addEventListener('click', () => {
+  // Evento para registrar usuario
+  btnRegistrar?.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (Username.value.trim() === '' || email.value.trim() === '' || password.value.trim() === '') {
+      alert('Favor de rellenar todos los campos para registrarse');
+      return;
+    }
+
+    const usuario = {
+      nombre: Username.value.trim(),
+      correo: email.value.trim(),
+      contrasena: password.value.trim()
+    };
+
+    localStorage.setItem('usuarioRegistrado', JSON.stringify(usuario));
+    
+    // Limpiar campos
+    Username.value = '';
+    email.value = '';
+    password.value = '';
+    
+    // Cambiar título
     if (titulo) titulo.textContent = 'Registro completado';
+    alert('Registro exitoso');
   });
 
-  btnIniciar?.addEventListener('click', () => {
-    if (titulo) titulo.textContent = 'Pantalla de inicio de sesión';
+  // Evento para iniciar sesión
+  btnIniciar?.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const usuarioGuardado = localStorage.getItem('usuarioRegistrado');
+    if (!usuarioGuardado) {
+      alert('No hay ningún usuario registrado. Por favor, regístrese primero.');
+      return;
+    }
+
+    const usuario = JSON.parse(usuarioGuardado);
+
+    // Validar credenciales (comparar después de trim)
+    if (email.value.trim() === usuario.correo && password.value.trim() === usuario.contrasena) {
+      if (titulo) titulo.textContent = `Bienvenido, ${usuario.nombre}`;
+      alert('Inicio de sesión exitoso');
+    } else {
+      if (titulo) titulo.textContent = 'Error de credencial';
+      alert('Correo o contraseña incorrectos');
+    }
   });
 
-  // Validaciones en blur (manteniendo la lógica corregida)
+  // Validación en blur para Username
   if (Username) {
     Username.addEventListener("blur", function(e) {
       const input = e.target;
@@ -37,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Validación en blur para Email
   if (email) {
     email.addEventListener("blur", function(e) {
       const input = e.target;
@@ -52,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (!emailRegex.test(value)) {
         inputField.classList.add("invalido");
         errorSpan.classList.add("error");
-        errorSpan.innerText = "Introduzca un email valido";
+        errorSpan.innerText = "Introduzca un email válido";
       } else {
         inputField.classList.remove("invalido");
         errorSpan.classList.remove("error");
@@ -61,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Validación en blur para Password
   if (password) {
     password.addEventListener("blur", function(e) {
       const input = e.target;
