@@ -1,0 +1,105 @@
+/* Adaptación de registro.css para usar con contact.html */
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* titulo */
+h2, h2 p{
+    text-align: center;
+    color: #0b3b5e;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+/* nombramos a todos los campos para centrarlos */
+.Nombre-del-usuario,
+.Correo-electronico,
+.mensaje,
+.boton-enviar{
+    max-width: 520px;
+    margin: 10px auto;
+}
+
+.Nombre-del-usuario input,
+.Correo-electronico input{
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(11,11,11,0.12);
+    background: #ffffff;
+    color: #0b0b0b;
+    font-size: 1rem;
+    outline: none;
+}
+
+.mensaje textarea{
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(11,11,11,0.12);
+    background: #ffffff;
+    color: #0b0b0b;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 140px;
+    outline: none;
+}
+
+/* Botón enviar */
+.boton-enviar input[type="button"]{
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1b9cd8;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Accesibilidad: foco visible */
+.Nombre-del-usuario input:focus,
+.Correo-electronico input:focus,
+.mensaje textarea:focus,
+.boton-enviar input[type="button"]:focus{
+    box-shadow: 0 0 0 4px rgba(27,156,216,0.12);
+}
+
+/* Placeholder color */
+input::placeholder, textarea::placeholder{
+    color: rgba(11,11,11,0.6);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 520px){
+    .contact-card{ padding: 18px; }
+    .Nombre-del-usuario input,
+    .Correo-electronico input,
+    .mensaje textarea{ padding: 12px; }
+}
+
+/* Si prefieres envolver el contenido en un contenedor, añade la clase .contact-card
+   alrededor del contenido de contact.html. El CSS funciona también sin wrapper. */
+
+/* Visual wrapper */
+.contact-card{
+    width:100%;
+    max-width:680px;
+    background: rgba(27,156,216,0.06);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(11,11,11,0.07);
+    margin: 24px auto;
+}
+
+/* Class para accesibilidad (visualmente oculto pero accesible a lectores) */
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
