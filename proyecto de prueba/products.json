@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Producto 1",
+    "name": "JUAN",
     "price": 102.5,
-    "category": "Hogar",
+    "category": "Elentrodomésticos",
     "brand": "Nova",
     "description": "Producto 1 de alta calidad para tus necesidades diarias en Hogar.",
     "stock": 11,
