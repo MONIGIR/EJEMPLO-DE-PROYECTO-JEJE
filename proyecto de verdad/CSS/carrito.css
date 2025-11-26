@@ -7,6 +7,8 @@
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
+    display: flex;
+    height: 100vh;
 
 }
 a{
@@ -53,4 +55,11 @@ header nav div{
 
 header nav image{
     height: 25px;
+}
+
+footer{
+    margin-top: auto;
+    text-shadow: 0 -3px 5px rgba(0,0,0,0.104);
+    text-align: center;
+    
 }
