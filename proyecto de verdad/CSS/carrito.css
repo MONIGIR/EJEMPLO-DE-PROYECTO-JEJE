@@ -1,9 +1,11 @@
 
+/* Variablos para los colores */
 :root{
     --color-acento: #0717ff;
         --color-acento-claro: #4d65ff6b;
         --color-texto: #333333;
 }
+/* cambia la fuente de la letra */
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
@@ -16,12 +18,12 @@ body{
 h3, p {
     margin: 6px 0;
 }
-
+/* Da estilo a los link de registro y contacto del header */
 a{
     text-decoration: none;
     color: var(--color-texto)
 }
-
+/* Da color a los links al pasar el cursor */
 a:hover:not(#cart){
     color: var(--color-acento)
 }
@@ -34,28 +36,28 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-
+/* Da sombra a la barra de navegación del header */
 header{
     box-shadow: 0 3px 5px rgba(0,0,0,0.104);
     padding: 10px 0;
     margin-bottom: 10px;
 }
-
+/* ubica registro, contacto y carro de compra */
 header nav{
     display: flex;
     justify-content: space-between;
     margin: 0 60px;
 }
-
+/* Da formato a los div dentro del nav */
 header nav div{
     display: flex;
     align-items: center;
     gap: 20px;
     position: relative;
 }
-
+/* Da estilo al contador del carrito */
 #cuenta-carrito{
-    background-color: var(--color-acento);
+    background-color: var(--color-acento-claro);
     border-radius: 100%;
     display: inline-block;
     width: 20px;
@@ -64,15 +66,16 @@ header nav div{
     text-align: center;
     position: absolute;
 }
-
+/* Dimensiones del logo */
 #logo{
     height: 100px;
 }   
-
+/* Dimensiones del icono de carrito */
 header nav image{
     height: 25px;
 }
 
+/* Le da formato a la caja del footer */
 footer{
     margin-top: auto;
     text-shadow: 0 -3px 5px rgba(0,0,0,0.104);

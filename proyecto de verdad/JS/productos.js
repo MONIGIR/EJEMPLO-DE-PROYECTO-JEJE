@@ -1,3 +1,6 @@
+
+// arreglo de productos muestra la lista de productos disponibles
+
 const productos= [
     {
         id: 1,

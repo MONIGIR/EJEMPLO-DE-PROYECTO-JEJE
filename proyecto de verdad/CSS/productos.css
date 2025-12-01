@@ -1,9 +1,12 @@
+/* CSS para la sección de productos */
+/* diseño para los contenedores de los productos */
 #productos-container{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
+/* Diseño para las tarjetas de productos */
 .tarjeta-producto {
     max-width: 300px;
     text-align: center;
@@ -12,17 +15,17 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.199);
     transition: 1000ms;
 }
-
+/* Estilo para los títulos y párrafos dentro de las tarjetas */
 h3, p {
     margin: 6px 0;
 }
-
+/* Estilo para las imágenes dentro de las tarjetas */
 .tarjeta-producto img {
     width: 100%;
     aspect-ratio: 1.5;
 }
-
+/* Estilo para el efecto hover en las tarjetas */
 .tarjeta-producto:hover {
     translate: 0 -10px;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.199);
-}
+}/* */
