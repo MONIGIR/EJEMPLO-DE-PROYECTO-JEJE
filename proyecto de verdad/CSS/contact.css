@@ -1,8 +1,3 @@
-/* Adaptación de registro.css para usar con contact.html */
-*{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 
 /* titulo */
 h2, h2 p{
@@ -103,3 +98,71 @@ input::placeholder, textarea::placeholder{
     white-space: nowrap;
     border: 0;
 }
+
+/* -------------------------------------- */
+/* apartado de la barra de navegacion */
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+a{
+    text-decoration: none;
+    color: var(--color-texto)
+}
+
+a:hover:not(#cart){
+    color: var(--color-acento)
+}
+
+header{
+    box-shadow: 0 3px 20px rgba(0,0,0,0.104);
+    padding: 10px 0;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px;
+}
+
+header nav div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+#cuenta-carrito{
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block;
+    width: 20px;
+    line-height: 20px;
+    aspect-ratio: 1;
+    text-align: center;
+    position: absolute;
+}
+
+#logo{
+    height: 100px;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+}   
+
+header nav image{
+    height: 25px;
+}
+
+footer{
+    margin-top: auto;
+    text-shadow: 0 -3px 5px rgba(0,0,0,0.104);
+    text-align: center;
+    
+}
+/* ---------------------------------------------- */
