@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="/proyecto de verdad/CSS/carrito.css"> 
-    <script src="/proyecto de verdad/JS/productos.js"></script>
+    <link rel="stylesheet" href="/proyecto de verdad/CSS/cart.css"> 
     <script src="/proyecto de verdad/JS/cartService.js" defer></script>
-
-
+    <script src="/proyecto de verdad/JS/cart2.js" defer></script>
     <title>carrito</title>
 </head>
 <body>
@@ -23,8 +22,17 @@
         </nav>
     </header>
     <main>
-
+        <p id="carrito-vacio">No hay productos en el carrito. <a href="productos.html">Agregar productos</a></p>
         <section id="productos-container"></section>
+        <div id="resumen-compra">
+            <section id="total"></section>
+            <p> total de unidades: <span id="unidades">0</span></p>
+            <p> Total Precio: $<span id="precio">0</span></p>
+            <div id="Contenedor-botones">
+                <button disabled>Comprar </button>
+                <button id="reiniciar">Reiniciar</button>
+            </div>
+        </div>
     </main>
     <footer></footer>
 </html>
