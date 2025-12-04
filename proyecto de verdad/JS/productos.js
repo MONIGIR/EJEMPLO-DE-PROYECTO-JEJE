@@ -11,35 +11,35 @@ const productos= [
     {
         id: 2,
         nombre: "RYZEN 7 5700X3D",
-        precio: 55555,
+        precio: 5,
         imagen: "/proyecto de verdad/images/7 5700X3D-900x900.jpg"
     },
 
     {
         id: 3,
         nombre: "32GB Viper Steel",
-        precio: 55555,
+        precio: 55,
         imagen: "/proyecto de verdad/images/32 gb Viper Steel.jpg"
     },
     
     {
         id: 4,
         nombre: "GIGABYTR GeForce RTX 3060 OC 12GB",
-        precio: 55555,
+        precio: 555,
         imagen: "/proyecto de verdad/images/3060 12 gb.jpg"
     },
 
     {
         id: 5,
         nombre: "GIGABYTR GeForce RTX 3080 OC 12GB",
-        precio: 55555,
+        precio: 5555,
         imagen: "/proyecto de verdad/images/3080 12 g.jpg"
     },
 
     {
         id: 6,
         nombre: "MSI GeForce RTX 4060 VENTUS 2X Black OC 8G",
-        precio: 55555,
+        precio: 566,
         imagen: "/proyecto de verdad/images/4060 8g.jpg"
     },
 

@@ -65,6 +65,7 @@ function actualizarTotales() {
     }
     resvisarMensajeVacio();
 }
+actualizarTotales();
 
 function resvisarMensajeVacio(){
     const productosEnMemoria = JSON.parse(localStorage.getItem('productos')) || [];
