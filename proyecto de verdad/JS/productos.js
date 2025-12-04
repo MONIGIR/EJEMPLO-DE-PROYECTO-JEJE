@@ -10,8 +10,10 @@ const productos= [
     },
     {
         id: 2,
-        nombre: "2",
+        nombre: "hola mundo",
         precio: 55555,
         imagen: "/proyecto de verdad/images/7 5700X3D-900x900.jpg"
     }
+
 ]
+s
