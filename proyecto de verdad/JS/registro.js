@@ -29,9 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Cambiar título
     if (titulo) titulo.textContent = 'Registro completado';
+  // Redirigir a la página de inicio después de un breve retraso
+    setTimeout(() => {
+      window.location.href = './index.html';
+    }, 1500);
     alert('Registro exitoso');
   });
-
   // Evento para iniciar sesión
   btnIniciar?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -48,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (email.value.trim() === usuario.correo && password.value.trim() === usuario.contrasena) {
       if (titulo) titulo.textContent = `Bienvenido, ${usuario.nombre}`;
       alert('Inicio de sesión exitoso');
+      // Redirigir a la página principal después de un breve retraso
+      setTimeout(() => {
+        window.location.href = './index.html';
+      }, 1500);
     } else {
       if (titulo) titulo.textContent = 'Error de credencial';
       alert('Correo o contraseña incorrectos');
@@ -60,16 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const input = e.target;
       const value = input.value.trim();
       const inputField = input.parentElement;
-      const errorSpan = inputField.nextElementSibling;
+      const errorSpan = inputField.parentElement.querySelector('.error-message');
 
       if (value.length === 0) {
         inputField.classList.add("invalido");
-        errorSpan.classList.add("error");
-        errorSpan.innerText = "Necesita un nombre de usuario";
+        if (errorSpan) {
+          errorSpan.classList.add("error");
+          errorSpan.textContent = "Necesita un Nombre de Usuario";
+          errorSpan.setAttribute('role', 'alert');
+        }
       } else {
         inputField.classList.remove("invalido");
-        errorSpan.classList.remove("error");
-        errorSpan.innerText = "";
+        if (errorSpan) {
+          errorSpan.classList.remove("error");
+          errorSpan.textContent = "";
+        }
       }
     });
   }
@@ -80,21 +92,29 @@ document.addEventListener('DOMContentLoaded', () => {
       const input = e.target;
       const value = input.value.trim();
       const inputField = input.parentElement;
-      const errorSpan = inputField.nextElementSibling;
+      const errorSpan = inputField.parentElement.querySelector('.error-message');
       const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
       if (value.length === 0) {
         inputField.classList.add("invalido");
-        errorSpan.classList.add("error");
-        errorSpan.innerText = "Necesita un Email";
+        if (errorSpan) {
+          errorSpan.classList.add("error");
+          errorSpan.textContent = "Necesita un Email";
+          errorSpan.setAttribute('role', 'alert');
+        }
       } else if (!emailRegex.test(value)) {
         inputField.classList.add("invalido");
-        errorSpan.classList.add("error");
-        errorSpan.innerText = "Introduzca un email válido";
+        if (errorSpan) {
+          errorSpan.classList.add("error");
+          errorSpan.textContent = "El formato de email no es válido";
+          errorSpan.setAttribute('role', 'alert');
+        }
       } else {
         inputField.classList.remove("invalido");
-        errorSpan.classList.remove("error");
-        errorSpan.innerText = "";
+        if (errorSpan) {
+          errorSpan.classList.remove("error");
+          errorSpan.textContent = "";
+        }
       }
     });
   }
@@ -105,16 +125,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const input = e.target;
       const value = input.value.trim();
       const inputField = input.parentElement;
-      const errorSpan = inputField.nextElementSibling;
+      const errorSpan = inputField.parentElement.querySelector('.error-message');
 
       if (value.length === 0) {
         inputField.classList.add("invalido");
-        errorSpan.classList.add("error");
-        errorSpan.innerText = "Necesita una contraseña";
+        if (errorSpan) {
+          errorSpan.classList.add("error");
+          errorSpan.textContent = "Necesita una contraseña";
+          errorSpan.setAttribute('role', 'alert');
+        }
       } else {
         inputField.classList.remove("invalido");
-        errorSpan.classList.remove("error");
-        errorSpan.innerText = "";
+        if (errorSpan) {
+          errorSpan.classList.remove("error");
+          errorSpan.textContent = "";
+        }
       }
     });
   }
