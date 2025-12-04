@@ -17,10 +17,10 @@ function getNuevoProductoParaMemoria(producto) {
 // --- 2. FUNCIÓN DE ACTUALIZACIÓN VISUAL: actualizarNumeroCarrito ---
 // Calcula y muestra el total de productos en el carrito.
 function actualizarNumeroCarrito() {
-    // 💡 CORRECCIÓN: Si localStorage es null/vacío, usa [] para evitar el error NaN.
+    //Si localStorage es null/vacío, usa [] para evitar el error NaN.
     const memoria = JSON.parse(localStorage.getItem('productos')) || [];
     
-    // ✅ CORRECCIÓN DEFENSIVA: Asegura que solo se sumen números válidos (previene NaN).
+    // Asegura que solo se sumen números válidos (previene NaN).
     const cuenta = memoria.reduce((acum, acurrent) => {
         // Verifica si la cantidad es un número entero válido, si no, usa 0.
         const cantidadValida = Number.isInteger(acurrent.cantidad) ? acurrent.cantidad : 0;
@@ -42,7 +42,7 @@ function agregarAlCarrito(producto) {
     // Busca el índice del producto usando su ID
     const indiceProducto = memoria.findIndex(p => p.id === producto.id);
     
-    // ✅ CORRECCIÓN: Crea una copia del array de memoria ANTES de modificar (inmutabilidad).
+    //Crea una copia del array de memoria ANTES de modificar (inmutabilidad).
     let nuevaMemoria = [...memoria]; 
 
     // Caso 1: El producto no está en el carrito
@@ -56,16 +56,31 @@ function agregarAlCarrito(producto) {
         nuevaMemoria[indiceProducto].cantidad++;
     }
 
-    // ✅ CORRECCIÓN: Guarda el array COMPLETO y actualizado (nuevaMemoria)
+    //Guarda el array COMPLETO y actualizado (nuevaMemoria)
     localStorage.setItem('productos', JSON.stringify(nuevaMemoria));
 
     // Llama a la función de actualización
     actualizarNumeroCarrito();
 }
 
+function restarAlCarrito(producto) {
+    const memoria = JSON.parse(localStorage.getItem('productos')); 
+    const indiceProducto = memoria.findIndex(p => p.id === producto.id);
+    if(indiceProducto === -1) return; // Si el producto no está, no hace nada
+    if(memoria[indiceProducto].cantidad === 1){
+        memoria.splice(indiceProducto, 1);
+        localStorage.setItem('productos', JSON.stringify(memoria));
+    } else {
+        memoria[indiceProducto].cantidad--;
+        localStorage.setItem('productos', JSON.stringify(memoria));
+    }
+    actualizarNumeroCarrito();
+}
 // Opcional: Función para limpiar el carrito (útil para debug y errores antiguos)
 function limpiarCarrito() {
     localStorage.removeItem('productos');
     actualizarNumeroCarrito(); 
     console.log('¡Carrito limpiado! Recarga la página y prueba de nuevo.');
 }
+
+actualizarNumeroCarrito(); // Inicializa el contador al cargar la pagina
