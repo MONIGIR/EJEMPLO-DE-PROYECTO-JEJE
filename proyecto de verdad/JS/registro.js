@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const titulo = document.querySelector('.form-container h1');
+const titulo = document.querySelector('.form-container h1');
   const Username = document.querySelector("#Nombre");
   const email = document.querySelector("#correo");
   const password = document.querySelector("#contrasena"); 
