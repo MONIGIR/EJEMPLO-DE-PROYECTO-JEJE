@@ -82,3 +82,7 @@ footer{
     text-align: center;
     
 }
+
+.escondido{
+    display: none;
+}   

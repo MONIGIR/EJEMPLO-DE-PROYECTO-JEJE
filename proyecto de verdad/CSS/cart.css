@@ -1,0 +1,44 @@
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#productos-container {
+    width: 500px;
+    margin: auto;
+}
+
+.tarjeta-producto {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.tarjeta-producto img {
+    height: 100px;
+    aspect-ratio: 1.5;
+}
+.tarjeta-producto h3 {
+    width: 100px;
+}
+
+#resumen-compra {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+#contenedor-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#carrito-vacio {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 50px;
+}
