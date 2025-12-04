@@ -14,8 +14,22 @@ function crearTarjetaProductosInicio(productos){
             <button class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</button>
         `;
         contenedorProductos.appendChild(nuevoProducto);
-        nuevoProducto.getElementsByTagName("button")[0].addEventListener("click", () => agregarAlCarrito(productos)); 
-    });  
+       const botonAgregar = nuevoProducto.getElementsByTagName("button")[0];
+        
+        botonAgregar.addEventListener("click", (e) => {
+            // 1. Obtiene el ID del atributo 'data-id' del botón
+            const idProducto = parseInt(e.currentTarget.dataset.id); 
+            
+            // 2. Busca el objeto completo en el arreglo global 'productos' 
+            //    (que viene de productos.js)
+            const productoCompleto = productos.find(p => p.id === idProducto);
+            
+            // 3. Llama a la función con el objeto completo
+            if (productoCompleto) {
+                agregarAlCarrito(productoCompleto);
+            } 
+        });  
+    });
 }
 
 
