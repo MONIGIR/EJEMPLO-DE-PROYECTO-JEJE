@@ -1,3 +1,6 @@
+// seleccion de elementos del DOM
+// y asignación de eventos para el registro e inicio de sesión
+// DOM: Document Object Model o modelo de objetos del documento; utilizado para reaccionar a eventos
 document.addEventListener('DOMContentLoaded', () => {
 const titulo = document.querySelector('.form-container h1');
   const Username = document.querySelector("#Nombre");
@@ -14,12 +17,13 @@ const titulo = document.querySelector('.form-container h1');
       return;
     }
 
+    // Validación de campos
     const usuario = {
       nombre: Username.value.trim(),
       correo: email.value.trim(),
       contrasena: password.value.trim()
     };
-
+    // Guardar usuario en localStorage
     localStorage.setItem('usuarioRegistrado', JSON.stringify(usuario));
     
     // Limpiar campos
