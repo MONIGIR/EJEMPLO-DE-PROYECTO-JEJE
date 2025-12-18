@@ -2,11 +2,11 @@
 
 
 // Variable global que apunta al elemento donde se muestra la cuenta total
-// Asegúrate de que el ID 'cuenta-carrito' exista en tu HTML.
+
 const cuentaCarrito = document.getElementById('cuenta-carrito');
 
-// --- 1. FUNCIÓN AUXILIAR: getNuevoProductoParaMemoria ---
-// Crea una COPIA del producto para evitar mutar el objeto original (inmutabilidad).
+//FUNCIÓN: getNuevoProductoParaMemoria 
+// Crea una COPIA del producto para evitar mutar el objeto original.
 function getNuevoProductoParaMemoria(producto) {
     return {
         ...producto, // Copia todas las propiedades del producto original
@@ -14,7 +14,7 @@ function getNuevoProductoParaMemoria(producto) {
     };
 }
 
-// --- 2. FUNCIÓN DE ACTUALIZACIÓN VISUAL: actualizarNumeroCarrito ---
+//FUNCIÓN DE ACTUALIZACIÓN VISUAL: actualizarNumeroCarrito 
 // Calcula y muestra el total de productos en el carrito.
 function actualizarNumeroCarrito() {
     //Si localStorage es null/vacío, usa [] para evitar el error NaN.
@@ -33,7 +33,7 @@ function actualizarNumeroCarrito() {
     }
 }
 
-// --- 3. FUNCIÓN PRINCIPAL: agregarAlCarrito ---
+//FUNCIÓN PRINCIPAL: agregarAlCarrito 
 // Añade un producto (objeto) al carrito o incrementa su cantidad.
 function agregarAlCarrito(producto) {
     // Inicializa la memoria (si es null, usa un array vacío [])
@@ -45,12 +45,12 @@ function agregarAlCarrito(producto) {
     //Crea una copia del array de memoria ANTES de modificar (inmutabilidad).
     let nuevaMemoria = [...memoria]; 
 
-    // Caso 1: El producto no está en el carrito
+    // Caso en el que producto no está en el carrito
     if (indiceProducto === -1) {
         // Agrega el nuevo producto (con cantidad 1)
         nuevaMemoria.push(getNuevoProductoParaMemoria(producto));
     } 
-    // Caso 2: El producto ya existe en el carrito
+    // Caso en el que producto ya existe en el carrito
     else {
         // Incrementa la cantidad del producto existente
         nuevaMemoria[indiceProducto].cantidad++;
