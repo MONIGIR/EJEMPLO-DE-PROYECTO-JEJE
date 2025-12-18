@@ -8,13 +8,6 @@
   --title: "Lora", serif;
 }
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -35,7 +28,6 @@ img {
   display: block;
 }
 
-/* Helpers mínimos */
 .section__container {
   max-width: var(--max);
   margin: 0 auto;
@@ -64,7 +56,6 @@ img {
   filter: brightness(0.85);
 }
 
-/* HEADER + NAV (lo importante) */
 .header {
   color: var(--white);
   background: linear-gradient(
@@ -125,7 +116,6 @@ nav {
   cursor: pointer;
 }
 
-/* Texto del hero */
 .header__container {
   text-align: center;
   padding: 5.5rem 1rem 4rem;
@@ -151,7 +141,6 @@ nav {
   border-radius: 50%;
 }
 
-/* Lo mínimo para no romper tu layout (sin detalles) */
 .choose__container,
 .modern__container {
   display: grid;
@@ -183,7 +172,6 @@ nav {
   align-items: center;
 }
 
-/* Footer simple */
 .footer {
   background: var(--primary);
   color: var(--white);
@@ -204,7 +192,6 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Responsive NAV (móvil) */
 @media (width < 900px) {
   .nav__actions {
     display: none;
@@ -240,10 +227,6 @@ nav {
     padding: 1rem;
   }
 
-  .nav__menu__btn {
-    display: block;
-  }
-
   .nav__links {
     position: absolute;
     left: 0;
@@ -257,26 +240,11 @@ nav {
     transition: 0.25s;
   }
 
-  .nav__links.open {
-    transform: scaleY(1);
-  }
-
   .header__container {
     padding-top: 7rem;
   }
 
   .header__container h1 {
     font-size: 2.8rem;
-  }
-
-  .craft__container,
-  .blog__grid,
-  .offer__grid__top,
-  .offer__grid__bottom {
-    grid-template-columns: 1fr;
-  }
-
-  .footer__bar {
-    flex-direction: column;
   }
 }

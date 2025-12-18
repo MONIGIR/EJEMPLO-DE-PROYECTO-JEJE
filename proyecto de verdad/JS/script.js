@@ -1,46 +1,37 @@
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+const botonMenu = document.getElementById("menu-btn");
+const enlacesNav = document.getElementById("nav-links");
 
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
-
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+enlacesNav.addEventListener("click", (evento) => {
+  enlacesNav.classList.remove("open");
+  iconoBotonMenu.setAttribute("class", "ri-menu-line");
 });
 
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
-
-const scrollRevealOption = {
-  distance: "50px",
+const opcionesScrollReveal = {
+  distance: "100px",
   origin: "bottom",
   duration: 1000,
 };
 
-// header container
 ScrollReveal().reveal(".header__container h1", {
-  ...scrollRevealOption,
+  ...opcionesScrollReveal,
 });
 
 ScrollReveal().reveal(".header__container p", {
-  ...scrollRevealOption,
+  ...opcionesScrollReveal,
   delay: 500,
 });
 
 ScrollReveal().reveal(".header__container form", {
-  ...scrollRevealOption,
-  delay: 1000,
+  ...opcionesScrollReveal,
+  delay: 100,
 });
 
 ScrollReveal().reveal(".header__container a", {
-  ...scrollRevealOption,
+  ...opcionesScrollReveal,
   delay: 1500,
 });
 
-const swiper = new Swiper(".swiper", {
+const carrusel = new Swiper(".swiper", {
   loop: true,
   pagination: {
     el: ".swiper-pagination",
