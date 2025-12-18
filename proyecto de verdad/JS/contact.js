@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Ejemplo: almacenar en localStorage (sustituir por envío real si es necesario)
+        // Ejemplo: almacenar en localStorage
         try {
             const mensajes = JSON.parse(localStorage.getItem('mensajes_contacto') || '[]');
             mensajes.push({ nombre, correo, mensaje, fecha: new Date().toISOString() });
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         alert('Mensaje enviado con éxito. Gracias por contactarnos.');
+        window.location.href = '../index.html';
         // Limpiar campos
         nombreInput.value = '';
         correoInput.value = '';
