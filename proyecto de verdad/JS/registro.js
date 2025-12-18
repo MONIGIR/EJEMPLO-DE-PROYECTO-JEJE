@@ -77,7 +77,7 @@ btnRegistrar?.addEventListener('click', (e) => {
       });
   });
 
-  // Validación en blur para Username
+  // Validación para Username
   if (Username) {
     Username.addEventListener("blur", function(e) {
       const input = e.target;
@@ -102,7 +102,7 @@ btnRegistrar?.addEventListener('click', (e) => {
     });
   }
 
-  // Validación en blur para Email
+  // Validación para Email
   if (email) {
     email.addEventListener("blur", function(e) {
       const input = e.target;
@@ -135,7 +135,7 @@ btnRegistrar?.addEventListener('click', (e) => {
     });
   }
 
-  // Validación en blur para Password
+  // Validación para Password
   if (password) {
     password.addEventListener("blur", function(e) {
       const input = e.target;
