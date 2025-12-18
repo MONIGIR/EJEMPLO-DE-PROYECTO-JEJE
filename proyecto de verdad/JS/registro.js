@@ -35,7 +35,7 @@ const titulo = document.querySelector('.form-container h1');
     if (titulo) titulo.textContent = 'Registro completado';
   // Redirigir a la página de inicio después de un breve retraso
     setTimeout(() => {
-      window.location.href = './index.html';
+      window.location.href = '/index.html';
     }, 1500);
     alert('Registro exitoso');
   });
@@ -57,7 +57,7 @@ const titulo = document.querySelector('.form-container h1');
       alert('Inicio de sesión exitoso');
       // Redirigir a la página principal después de un breve retraso
       setTimeout(() => {
-        window.location.href = './index.html';
+        window.location.href = '/index.html';
       }, 1500);
     } else {
       if (titulo) titulo.textContent = 'Error de credencial';
